@@ -1,5 +1,6 @@
 # Agentic AI – Foundations and Open-Source Practice
-## Day 1 Lab
+
+## Day 1 Lab: Chatbot vs Rule-Based Workflow vs AI Agent
 
 ---
 
@@ -7,62 +8,78 @@
 
 **Agentic AI: Foundations and Open-Source Practice – Day 1**
 
+**Topic:** Python in VS Code – Chatbot vs Rule-Based Workflow vs AI Agent
+
 ---
 
 ## 2. Aim
 
-To set up a Python development environment in Visual Studio Code and understand the difference between a simple chatbot, a rule-based workflow, and an AI agent using an OpenAI-compatible LLM API.
+To set up a Python development environment in Visual Studio Code, connect Python to an OpenAI-compatible Large Language Model (LLM), and implement and compare three approaches for solving the same course-fee problem:
+
+1. A simple LLM chatbot
+2. A rule-based workflow
+3. An AI-agent-based system
+
+The experiment demonstrates the differences between natural-language generation, fixed program logic, and AI-assisted decision making.
 
 ---
 
 ## 3. Objectives
 
-- Set up a Python virtual environment.
-- Install the required Python packages.
-- Configure an LLM provider using environment variables.
-- Connect the project with the Groq API.
-- Verify the LLM connection.
-- Implement a simple chatbot.
-- Implement a rule-based workflow.
-- Create reusable tools.
-- Implement a basic AI agent.
-- Test the agent with course-fee questions.
-- Compare the three approaches.
-- Use Git and GitHub for version control.
+After completing this laboratory, the following objectives were achieved:
+
+- Set up Python and a virtual environment in VS Code.
+- Install and configure the required Python packages.
+- Store the API key securely using a `.env` file.
+- Connect Python to an LLM using an OpenAI-compatible API.
+- Implement a simple LLM chatbot.
+- Implement a rule-based workflow using Python logic.
+- Implement a basic AI-agent system using an LLM and course information.
+- Compare the behavior of the three approaches.
+- Observe how an LLM can produce incorrect information when private data is not provided.
+- Understand the importance of deterministic logic for calculations.
+- Practice Git version control and GitHub repository management.
 
 ---
 
-## 4. Introduction
+## 4. Prerequisites
 
-Agentic AI systems can be implemented using different approaches.
+The laboratory requires basic knowledge of:
 
-A **simple chatbot** sends a user's question directly to a language model and returns the generated response.
-
-A **rule-based workflow** follows predefined instructions and uses programmed logic to perform specific tasks.
-
-An **AI agent** combines a language model with information, instructions, tools, and a workflow to perform tasks based on user requests.
-
-This laboratory demonstrates these approaches using a course-fee example.
+- Python variables and data types
+- Functions
+- Dictionaries
+- `if` and `else` conditions
+- Loops
+- Importing Python modules
+- Running Python programs from a terminal
+- Basic understanding of LLMs
+- Basic understanding of the concept of AI agents
 
 ---
 
-## 5. Technologies Used
+## 5. Software and Technologies Used
 
-- Python 3.13
-- Visual Studio Code
-- Groq API
-- OpenAI Python SDK
-- python-dotenv
-- Git
-- GitHub
-- `openai/gpt-oss-20b` model
+| Technology | Purpose |
+|---|---|
+| Python 3.13.0 | Programming language |
+| Visual Studio Code | Code editor and terminal |
+| Python Virtual Environment | Isolated project environment |
+| OpenAI Python Package | API client |
+| python-dotenv | Loading `.env` configuration |
+| Groq | LLM API provider |
+| Git | Version control |
+| GitHub | Remote repository |
 
 ---
 
 ## 6. LLM Configuration
 
-The LLM provider used in this experiment is **Groq**.
+### Provider Used
+
+**Groq**
+
+### Model Used
 
 ```text
-Provider : groq
-Model    : openai/gpt-oss-20b
+openai/gpt-oss-20b
