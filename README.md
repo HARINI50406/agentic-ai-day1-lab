@@ -1,22 +1,52 @@
-# Agentic AI – Day 1 Lab
-
-## Lab Title
-
-**Agentic AI: Foundations and Open-Source Practice – Day 1**
-
-## Objective
-
-The objective of this lab is to set up a Python environment in VS Code and understand the difference between:
-
-- Simple Chatbot
-- Rule-Based Workflow
-- AI Agent
-
-The lab also demonstrates how an AI agent can use course information and tools to answer questions.
+# Agentic AI – Foundations and Open-Source Practice
+## Day 1 Lab
 
 ---
 
-## Technologies Used
+## 1. Lab Title
+
+**Agentic AI: Foundations and Open-Source Practice – Day 1**
+
+---
+
+## 2. Aim
+
+To set up a Python development environment in Visual Studio Code and understand the difference between a simple chatbot, a rule-based workflow, and an AI agent using an OpenAI-compatible LLM API.
+
+---
+
+## 3. Objectives
+
+- Set up a Python virtual environment.
+- Install the required Python packages.
+- Configure an LLM provider using environment variables.
+- Connect the project with the Groq API.
+- Verify the LLM connection.
+- Implement a simple chatbot.
+- Implement a rule-based workflow.
+- Create reusable tools.
+- Implement a basic AI agent.
+- Test the agent with course-fee questions.
+- Compare the three approaches.
+- Use Git and GitHub for version control.
+
+---
+
+## 4. Introduction
+
+Agentic AI systems can be implemented using different approaches.
+
+A **simple chatbot** sends a user's question directly to a language model and returns the generated response.
+
+A **rule-based workflow** follows predefined instructions and uses programmed logic to perform specific tasks.
+
+An **AI agent** combines a language model with information, instructions, tools, and a workflow to perform tasks based on user requests.
+
+This laboratory demonstrates these approaches using a course-fee example.
+
+---
+
+## 5. Technologies Used
 
 - Python 3.13
 - Visual Studio Code
@@ -25,26 +55,14 @@ The lab also demonstrates how an AI agent can use course information and tools t
 - python-dotenv
 - Git
 - GitHub
-
-### LLM Provider
-
-**Provider:** Groq
-
-**Model:** `openai/gpt-oss-20b`
+- `openai/gpt-oss-20b` model
 
 ---
 
-## Project Structure
+## 6. LLM Configuration
+
+The LLM provider used in this experiment is **Groq**.
 
 ```text
-lab day 1/
-│
-├── .gitignore
-├── requirements.txt
-├── config.py
-├── check_setup.py
-├── chatbot.py
-├── workflow.py
-├── tools.py
-├── agent.py
-└── challenge.py
+Provider : groq
+Model    : openai/gpt-oss-20b
