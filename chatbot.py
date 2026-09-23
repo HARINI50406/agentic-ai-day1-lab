@@ -1,17 +1,20 @@
+"""System 1: a plain LLM chatbot. No tools, no access to the college data."""
 from config import client, MODEL, QUESTIONS, banner
-
-banner("Simple Chatbot")
-
-for question in QUESTIONS:
-    print("User:", question)
-
+ 
+def chatbot(question):
     response = client.chat.completions.create(
         model=MODEL,
         messages=[
-            {"role": "user", "content": question}
+            {"role": "system", "content": "You are a helpful college assistant."},
+            {"role": "user", "content": question},
         ],
+        temperature=0,
     )
-
-    answer = response.choices[0].message.content.strip()
-    print("Bot:", answer)
-    print()
+    return response.choices[0].message.content.strip()
+ 
+if __name__ == "__main__":
+    banner("SYSTEM 1: CHATBOT")
+    for question in QUESTIONS:
+        print("Q:", question)
+        print("A:", chatbot(question))
+        print("-" * 70)
