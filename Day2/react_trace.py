@@ -1,64 +1,59 @@
 import sys
 
-sys.path.append(r"..\lab day 1")
+sys.path.append(r"..\day1_task")
 
-from config import client, MODEL, COURSE_FEES
-from tools import get_fee, scholarship_fee
+
+def calculate_bill(units):
+    if units <= 100:
+        return units * 2
+    elif units <= 200:
+        return (100 * 2) + ((units - 100) * 3)
+    else:
+        return (100 * 2) + (100 * 3) + ((units - 200) * 5)
 
 
 QUESTION = (
-    "Which is cheaper: CS101 and AI202 with a 10% scholarship, "
-    "or all three courses with a 25% scholarship? By how much?"
+    "A household consumes 250 units of electricity. "
+    "Calculate the electricity bill using the given slab rates."
 )
 
 print("Question:")
 print(QUESTION)
 print()
 
-# Step 1: Get course fees
-print("Step 1 - Get course fees")
+print("Step 1 - Identify the electricity units")
+units = 250
+print("Observation: Units consumed =", units)
 
-cs101 = get_fee("CS101")
-print("Observation: CS101 =", cs101)
-
-ai202 = get_fee("AI202")
-print("Observation: AI202 =", ai202)
-
-ds303 = get_fee("DS303")
-print("Observation: DS303 =", ds303)
-
-# Step 2: Calculate first option
 print()
-print("Step 2 - Calculate first option")
+print("Step 2 - Calculate the first 100 units")
 
-first_option = (cs101 + ai202) * 0.90
-print("Calculation: (12000 + 18000) * 0.90")
-print("Observation:", first_option)
+first_slab = 100 * 2
+print("Calculation: 100 * ₹2")
+print("Observation: ₹", first_slab)
 
-# Step 3: Calculate second option
 print()
-print("Step 3 - Calculate second option")
+print("Step 3 - Calculate the next 100 units")
 
-second_option = (cs101 + ai202 + ds303) * 0.75
-print("Calculation: (12000 + 18000 + 15000) * 0.75")
-print("Observation:", second_option)
+second_slab = 100 * 3
+print("Calculation: 100 * ₹3")
+print("Observation: ₹", second_slab)
 
-# Step 4: Compare
 print()
-print("Step 4 - Compare the two options")
+print("Step 4 - Calculate the remaining 50 units")
 
-difference = second_option - first_option
-print("Calculation:", second_option, "-", first_option)
-print("Observation:", difference)
+third_slab = 50 * 5
+print("Calculation: 50 * ₹5")
+print("Observation: ₹", third_slab)
+
+print()
+print("Step 5 - Calculate total bill")
+
+total_bill = calculate_bill(units)
+
+print("Calculation: ₹200 + ₹300 + ₹250")
+print("Observation: ₹", total_bill)
 
 print()
 print("Final Answer:")
-print(
-    f"CS101 + AI202 with a 10% scholarship costs ₹{first_option:.2f}."
-)
-print(
-    f"All three courses with a 25% scholarship costs ₹{second_option:.2f}."
-)
-print(
-    f"The first option is cheaper by ₹{difference:.2f}."
-)
+print(f"The electricity bill for {units} units is ₹{total_bill}.")
